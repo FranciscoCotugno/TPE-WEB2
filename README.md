@@ -1,5 +1,6 @@
 # TPE-WEB2
-En este repositorio subiremos el proceso del tpe
+En este repositorio subiremos el proceso del tpe.
+
 Nombres: Gaviña Agustin - Cotugno Francisco
 
 Tematica del TPE: Comercial
