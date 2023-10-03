@@ -12,7 +12,12 @@ class controllerTask{
     }
 
     public function homeController (){
-        require 'templates/header.php';
+        require ('templates/header.phtml');
+        require ('templates/footer.phtml');
+    }
+    public function showCategoryes(){
+        $categoryes= $this->model->getCategorys();
+        $this->view->viewCategoryes($categoryes);
         
     }
 }

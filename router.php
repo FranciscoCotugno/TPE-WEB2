@@ -16,7 +16,10 @@ $params = explode('/', $action);
 switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'home':
         $controller= new controllerTask();
-        //$controller->hola();
+        $controller->homeController();
         break;
-        
+    case 'Productos':
+        $controller= new controllerTask();
+        $controller->showCategoryes();
+        break;   
 }
