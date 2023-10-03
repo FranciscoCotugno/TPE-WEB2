@@ -1,0 +1,11 @@
+<?php require ('templates/header.phtml'); ?>
+
+        <ul>
+           <?php
+           foreach($categoryes as $category):?>
+                <li >
+                    <a href="todos"><?=$category->Category_name?></a>
+                </li>
+    <?php endforeach ?>
+        </ul>     
+<?php require ('templates/footer.phtml'); ?>

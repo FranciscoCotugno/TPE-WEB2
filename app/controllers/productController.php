@@ -18,6 +18,9 @@ class controllerTask{
     public function showCategoryes(){
         $categoryes= $this->model->getCategorys();
         $this->view->viewCategoryes($categoryes);
-        
+    }
+    public function showAllProducts(){
+        $products= $this->model->getAllProducts();
+        $this->view->viewAllProducts($products);
     }
 }

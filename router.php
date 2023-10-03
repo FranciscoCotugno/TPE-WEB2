@@ -5,7 +5,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 
 // el router va a leer la action desde el paramtro "action"
 
-$action = 'home'; // accion por defecto
+$action = 'Home'; // accion por defecto
 if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
@@ -14,12 +14,19 @@ if (!empty( $_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
-    case 'home':
+    case 'Home':
         $controller= new controllerTask();
         $controller->homeController();
         break;
     case 'Productos':
         $controller= new controllerTask();
         $controller->showCategoryes();
-        break;   
+        break;
+    case 'hola':
+        $controller= new controllerTask();
+        $controller->showAllProducts();
+        break;     
+    default:
+        echo "error";
+        break;
 }

@@ -15,4 +15,13 @@ class productModel{
     
         return $categorys;
     }
+
+    public function getAllProducts(){
+        $query= $this->db->prepare('SELECT * FROM products');
+        $query->execute();
+
+        $products =$query->fetchAll(PDO::FETCH_OBJ);
+    
+        return $products;
+    }
 }

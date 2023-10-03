@@ -2,19 +2,10 @@
 
 class productView{
     public function viewCategoryes($categoryes){
-        require ('templates/header.phtml');
-        ?>
+        require 'templates/viewCategoryes.phtml';
+    }
 
-        <ul>
-           <?php
-           foreach($categoryes as $category){?>
-                <li >
-                    <a href=""><?php echo $category->Category_name?></a>
-                </li>
-     <?php   }?> 
-        </ul>
-    
-        <?php
-        require ('templates/footer.phtml');
+    public function viewAllProducts($products){
+        require 'templates/viewAllProducts.phtml';
     }
 }

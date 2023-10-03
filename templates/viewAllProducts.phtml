@@ -1,0 +1,10 @@
+<?php require ('templates/header.phtml'); ?>
+        <ul>
+           <?php
+           foreach($products as $product):?>
+                <li >
+                    <a href=""><?=$product->Product_name?></a>
+                </li>
+    <?php endforeach ?>
+        </ul>     
+<?php require ('templates/footer.phtml'); ?>
