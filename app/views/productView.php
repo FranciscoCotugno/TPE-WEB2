@@ -16,7 +16,10 @@ class productView
     {
 ?>
 
-        <ul>
+        <ul class="list-categorys">
+            <li>
+                <a href="">Todos</a>
+            </li>
             <?php foreach ($categoryes as $category) { ?>
                 <li>
                     <a href=""><?php echo $category->Category_name ?></a>
@@ -31,19 +34,21 @@ class productView
     {
     ?>
 
-        <div class="contenedor-cards">
+        <div class="container-cards">
             <?php foreach ($products as $product) { ?>
                 <div class="card">
                     <div class="card-img">
-                        <img src="./img/fernet-branca-750ml-recorted.png" alt="<?php echo $product->Product_name ?> <?php echo $product->Milliliters ?>ml">
+                        <img src="./img/productos/<?php echo $product->Product_name ?>.png" alt="<?php echo $product->Product_name ?> <?php echo $product->Milliliters ?>ml">
                     </div>
-                    <div class="card-text">
-                        <p class="card-title"><?php echo $product->Product_name ?></p>
-                        <p class="card-subtitle"><?php echo $product->Milliliters ?>ml</p>
-                    </div>
-                    <hr class="card-divider">
-                    <div class="card-footer">
-                        <p class="card-price">$<?php echo $product->Price ?></p>
+                    <div class="card-info">
+                        <div class="card-description">
+                            <p class="card-productName"><?php echo $product->Product_name ?></p>
+                            <p class="card-milliliters"><?php echo $product->Milliliters ?>ml</p>
+                        </div>
+                        <hr class="card-divider">
+                        <div class="card-footer">
+                            <p class="card-price">$<?php echo $product->Price ?></p>
+                        </div>
                     </div>
                 </div>
             <?php } ?>
