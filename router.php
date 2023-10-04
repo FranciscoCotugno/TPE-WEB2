@@ -11,25 +11,38 @@ if (!empty( $_GET['action'])) {
 }
 
 // parsea la accion Ej: noticia/1 --> ['noticia', 1]
-$params = explode('/', $action);
+$params = explode('-', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
-    case 'home':
+    default:
         $controller= new controllerTask();
         $controller->homeController();
         break;
+    // case 'productos':
+    //     $controller= new controllerTask();
+    //     $controller->showCategoryes();
+    //     $controller->showProducts(); 
+    //     break;
+    // case 'todos':
+    //     $controller = new controllerTask();
+    //     $controller->showCategoryes();
+    //     $controller->showProducts();  
+    //     break; 
     case 'productos':
-        $controller= new controllerTask();
-        $controller->showCategoryes();
-        break;
-    case 'todos':
         $controller = new controllerTask();
         $controller->showCategoryes();
-        $controller->showProducts();  
-        break;  
-    case 'producto':
-        $controller = new controllerTask();
-        $controller->showCategoryes();
-        $controller->showProductsByCategory($params[1]);
+        if($params[1] == 0){
+            $controller->showProducts();
+        }
+        else if ($params[1] >= 1 && $params[1] <= 6){
+           $controller->showProductsByCategory($params[1]); 
+        }
+        else{
+            echo "error 404";
+        }       
         break;   
+    case 'inicio-sesion':
+        $controller = new controllerTask();
+        $controller->showInicioSesion();
+        break;
 }

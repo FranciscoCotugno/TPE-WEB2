@@ -27,6 +27,8 @@ class controllerTask{
     public function showProductsByCategory($id){
         $products = $this->model->getProductsByCategory($id);
         $this->view->showProductsCategory($products);
-        
+    }
+    public function showInicioSesion(){
+        $this->view->viewInicioSesion();
     }
 }
