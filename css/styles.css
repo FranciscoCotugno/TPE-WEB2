@@ -237,9 +237,8 @@ footer ul {
     }
 
     .nav-link {
-        border-bottom: 0;
-        text-align: center;
-        margin: 0px 20px;
+        margin: 0;
+        width: 100%;
     }
 
     .nav-link a {

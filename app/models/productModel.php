@@ -16,12 +16,21 @@ class productModel{
         return $categorys;
     }
 
-    function getProducts(){
+    public function getProducts(){
         $query = $this->db ->prepare('SELECT * FROM products');
         $query ->execute();
     
         $tasks = $query->fetchAll(PDO::FETCH_OBJ);
     
+        return $tasks;
+    }
+
+    public function getProductsByCategory($id){
+        $query = $this->db ->prepare("SELECT * FROM products WHERE Category_id =".$id);
+        $query ->execute();
+
+        $tasks = $query->fetchAll(PDO::FETCH_OBJ);
+
         return $tasks;
     }
 }

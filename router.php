@@ -24,5 +24,12 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller->showCategoryes();
         $controller->showProducts();
         require_once ('templates/footer.phtml');
+        break;
+    case 'producto':
+        $controller = new controllerTask();
+        require_once ('templates/header.phtml');
+        $controller->showCategoryes();
+        $controller->showProductsByCategory($params[1]);
+        require_once ('templates/footer.phtml');
         break;   
 }

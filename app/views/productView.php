@@ -18,11 +18,11 @@ class productView
 
         <ul class="list-categorys">
             <li>
-                <a href="">Todos</a>
+                <a href="productos">Todos</a>
             </li>
             <?php foreach ($categoryes as $category) { ?>
                 <li>
-                    <a href=""><?php echo $category->Category_name ?></a>
+                    <a href="producto/<?php echo $category->Category_id ?>"><?php echo $category->Category_name ?></a>
                 </li>
             <?php   } ?>
         </ul>
