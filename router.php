@@ -18,8 +18,11 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller= new controllerTask();
         $controller->homeController();
         break;
-    case 'Productos':
+    case 'productos':
         $controller= new controllerTask();
+        require_once ('templates/header.phtml');
         $controller->showCategoryes();
+        $controller->showProducts();
+        require_once ('templates/footer.phtml');
         break;   
 }
