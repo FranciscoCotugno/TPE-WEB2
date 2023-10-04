@@ -1,0 +1,19 @@
+<?php require ('templates/header.phtml'); 
+?>
+
+<ul class="list-categorys">
+    <li>
+        <a href="todos">Todos</a>
+    </li>
+    <?php
+           foreach($categoryes as $category):
+               if($category->Category_id):?> 
+                    <li>
+                        <a href="producto/<?=$category->Category_id ?>"><?=$category->Category_name?></a>
+                    </li>
+                <?php endif ?>
+    <?php endforeach ?>
+</ul>     
+
+
+

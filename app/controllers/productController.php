@@ -26,6 +26,7 @@ class controllerTask{
     }
     public function showProductsByCategory($id){
         $products = $this->model->getProductsByCategory($id);
-        $this->view->showProducts($products);
+        $this->view->showProductsCategory($products);
+        
     }
 }

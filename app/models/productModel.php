@@ -26,8 +26,8 @@ class productModel{
     }
 
     public function getProductsByCategory($id){
-        $query = $this->db ->prepare("SELECT * FROM products WHERE Category_id =".$id);
-        $query ->execute();
+        $query = $this->db ->prepare("SELECT * FROM products WHERE Category_id =?");
+        $query ->execute([$id]);
 
         $tasks = $query->fetchAll(PDO::FETCH_OBJ);
 
