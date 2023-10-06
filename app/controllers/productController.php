@@ -1,12 +1,13 @@
 <?php
 require_once './app/models/productModel.php';
 require_once './app/views/productView.php';
-
+require_once './app/helper/autHelper.php';
 class controllerTask{
     private $model;
     private $view;
 
     public function __construct(){
+       
         $this->model= new productModel();
         $this->view= new productView();
     }
@@ -21,14 +22,21 @@ class controllerTask{
         
     }
     public function showProducts(){
+        AuthHelper::verify();
         $products = $this->model->getProducts();
         $this->view->showProducts($products);
     }
     public function showProductsByCategory($id){
+        AuthHelper::verify();
+
         $products = $this->model->getProductsByCategory($id);
+        
         $this->view->showProductsCategory($products);
     }
-    public function showInicioSesion(){
-        $this->view->viewInicioSesion();
+    
+    public function showError(){
+        $this->view->showError("Error 404");
     }
+    
+    
 }

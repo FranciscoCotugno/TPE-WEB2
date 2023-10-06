@@ -1,6 +1,6 @@
 <?php
 require_once 'app/controllers/productController.php';
-
+require_once 'app/controllers/authController.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 // el router va a leer la action desde el paramtro "action"
@@ -18,16 +18,6 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller= new controllerTask();
         $controller->homeController();
         break;
-    // case 'productos':
-    //     $controller= new controllerTask();
-    //     $controller->showCategoryes();
-    //     $controller->showProducts(); 
-    //     break;
-    // case 'todos':
-    //     $controller = new controllerTask();
-    //     $controller->showCategoryes();
-    //     $controller->showProducts();  
-    //     break; 
     case 'productos':
         $controller = new controllerTask();
         $controller->showCategoryes();
@@ -38,11 +28,53 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
            $controller->showProductsByCategory($params[1]); 
         }
         else{
-            echo "error 404";
+           $controller->showError();
         }       
         break;   
-    case 'inicio-sesion':
-        $controller = new controllerTask();
+    case 'registro':
+        $controller = new authController();
+        $controller->showCrearCuenta();
+        break;
+    case 'crearCuenta':
+        $controller = new authController();
+        $controller->createUser();
+        break;
+    case 'inicioSesion':
+        $controller = new authController();
         $controller->showInicioSesion();
         break;
+    case 'ingreso':
+        $controller = new authController();
+        $controller->ingreso();
+        break; 
+    case 'logout':
+        $controller = new authController();
+        $controller->logout();
+        break;      
 }
+
+
+// case 'productos':
+    //     $controller= new controllerTask();
+    //     $controller->showCategoryes();
+    //     $controller->showProducts(); 
+    //     break;
+    // case 'todos':
+    //     $controller = new controllerTask();
+    //     $controller->showCategoryes();
+    //     $controller->showProducts();  
+    //     break; 
+
+    /*
+    1) function insertTask($title, $description, $priority) {// palabra: ingresar 
+        $query = $this->db->prepare('INSERT INTO tareas (titulo, descripcion, prioridad) VALUES(?,?,?)');
+        $query->execute([$title, $description, $priority]);
+
+        return $this->db->lastInsertId();
+    }
+
+    2)    $title = $_POST['title'];
+        $description = $_POST['description'];
+        $priority = $_POST['priority'];
+        //pag 27/28 autenticacion y leer segurida hash
+*/ 

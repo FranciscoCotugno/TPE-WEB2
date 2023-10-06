@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2023 a las 15:42:39
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Oct 05, 2023 at 02:49 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tpeweb2`
+-- Database: `tpeweb2`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categorys`
+-- Table structure for table `categorys`
 --
 
 CREATE TABLE `categorys` (
@@ -33,7 +33,7 @@ CREATE TABLE `categorys` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `categorys`
+-- Dumping data for table `categorys`
 --
 
 INSERT INTO `categorys` (`Category_id`, `Category_name`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `categorys` (`Category_id`, `Category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -59,7 +59,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`Product_id`, `Product_name`, `Milliliters`, `Price`, `Category_id`) VALUES
@@ -103,45 +103,76 @@ INSERT INTO `products` (`Product_id`, `Product_name`, `Milliliters`, `Price`, `C
 (38, 'Branca edicion limitada', 750, 1000, 6),
 (39, '1882', 750, 1000, 6);
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
+  `email_user` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id_user`, `email_user`, `password`) VALUES
+(1, 'webadmin', 'admin');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `categorys`
+-- Indexes for table `categorys`
 --
 ALTER TABLE `categorys`
   ADD PRIMARY KEY (`Category_id`);
 
 --
--- Indices de la tabla `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`Product_id`),
   ADD KEY `FK_category_id` (`Category_id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorys`
+-- AUTO_INCREMENT for table `categorys`
 --
 ALTER TABLE `categorys`
   MODIFY `Category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `Product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`Category_id`) REFERENCES `categorys` (`Category_id`);

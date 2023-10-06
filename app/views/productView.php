@@ -15,10 +15,8 @@ class productView{
         require 'templates/showProductsCategory.phtml';
 
     }
-
-    public function viewInicioSesion(){
-        require 'templates/header.phtml';
-        require 'templates/form-inisio-sesion.phtml';
-        require 'templates/footer.phtml';
+    public function showError($error){
+        require 'templates/showError.phtml';
     }
+    
 }
