@@ -42,6 +42,9 @@ class productModel{
 
         return $tasks;
     }
-    
+    function deleteProduct($id){
+        $query = $this->db-> prepare('DELETE FROM products WHERE Product_id=?');
+        $query-> execute([$id]);
+    }
 }
 

@@ -2,7 +2,7 @@
 require_once './app/models/productModel.php';
 require_once './app/views/productView.php';
 require_once './app/helper/autHelper.php';
-class controllerTask{
+class controllerProduct{
     private $model;
     private $view;
 
@@ -37,6 +37,9 @@ class controllerTask{
     public function showError(){
         $this->view->showError("Error 404");
     }
-    
+    public function removeProduct($id){
+        $this->model->deleteProduct($id);
+        header('location: '. BASE_URL);//redirigis al home
+    }
     
 }

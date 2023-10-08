@@ -15,11 +15,11 @@ $params = explode('-', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
     default:
-        $controller= new controllerTask();
+        $controller= new controllerProduct();
         $controller->homeController();
         break;
     case 'productos':
-        $controller = new controllerTask();
+        $controller = new controllerProduct();
         $controller->showCategoryes();
         if($params[1] == 0){
             $controller->showProducts();
@@ -51,6 +51,10 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new authController();
         $controller->logout();
         break;      
+    case 'eliminar':
+        $controller = new controllerProduct();
+        $controller->removeProduct($params[1]);
+        break;
 }
 
 
