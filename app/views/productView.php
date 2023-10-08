@@ -19,4 +19,8 @@ class productView{
         require 'templates/showError.phtml';
     }
     
+    public function viewAdministrar($products){
+        require 'templates/header.phtml';
+        require 'templates/adminProducts.phtml';
+    }
 }

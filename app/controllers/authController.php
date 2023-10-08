@@ -33,7 +33,7 @@ class authController{
         }
 
     }
-    public function ingreso(){//primero resive los datos y ahi te deja inserttask
+    public function ingreso(){
         $email_user= $_POST['email_user'];
         $password = $_POST['password'];
 

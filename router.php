@@ -1,6 +1,7 @@
 <?php
 require_once 'app/controllers/productController.php';
 require_once 'app/controllers/authController.php';
+require_once 'app/controllers/adminController.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 // el router va a leer la action desde el paramtro "action"
@@ -14,7 +15,7 @@ if (!empty( $_GET['action'])) {
 $params = explode('-', $action);
 
 switch ($params[0]) { // en la primer posicion tengo la accion real
-    default:
+    case 'home':
         $controller= new controllerProduct();
         $controller->homeController();
         break;
@@ -52,9 +53,22 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller->logout();
         break;      
     case 'eliminar':
-        $controller = new controllerProduct();
+        $controller = new adminController();
         $controller->removeProduct($params[1]);
         break;
+    case 'administrar':
+        $controller = new adminController();
+        $controller->showAdministrar();
+        break;
+    case 'agregarProducto':
+        $controller = new adminController();
+        $controller->updateProduct($params[1]);
+        break;
+    default:
+        require 'templates/header.phtml';
+        require 'templates/showError.phtml';
+    
+       
 }
 
 
