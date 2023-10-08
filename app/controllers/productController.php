@@ -7,7 +7,6 @@ class controllerProduct{
     private $view;
 
     public function __construct(){
-       
         $this->model= new productModel();
         $this->view= new productView();
     }
@@ -22,24 +21,23 @@ class controllerProduct{
         
     }
     public function showProducts(){
-        AuthHelper::verify();
         $products = $this->model->getProducts();
         $this->view->showProducts($products);
     }
     public function showProductsByCategory($id){
-        AuthHelper::verify();
-
+        
         $products = $this->model->getProductsByCategory($id);
         
         $this->view->showProductsCategory($products);
     }
+    public function show(){
+        $categoryes= $this->model->nameCategory();
+        $this->view->viewCategoryes($categoryes);
+        
+    }
     
     public function showError(){
         $this->view->showError("Error 404");
-    }
-    public function removeProduct($id){
-        $this->model->deleteProduct($id);
-        header('location: '. BASE_URL);//redirigis al home
     }
     
 }

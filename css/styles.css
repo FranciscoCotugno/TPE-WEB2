@@ -116,7 +116,7 @@ footer ul {
     margin-right: 20px;
 }
 
-/* PRODUCTOS */
+/*---------- PRODUCTOS -----------*/
 .list-categorys {
     background-color: #3e3939;
     font-family: "Poppins", serif;
@@ -269,7 +269,7 @@ footer ul {
 }
 
 
-/* FORM INICIO SESION */
+/*---------- FORM INICIO SESION ----------*/
 .main-form__inicioSesion {
     display: flex;
     justify-content: center;
@@ -319,4 +319,26 @@ footer ul {
     width: 100%;
     border-radius: 0.5rem;
     text-transform: uppercase;
+}
+
+/*---------- ADMINISTRAR ----------*/
+.no-mostrar {
+    display: none;
+}
+
+/*--------- ERROR 404 PAGE ----------*/
+.main-errorPage {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.errorPage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.errorPage-container__number {
+    font-size: 3em;
+    padding: 1em;
+    border-right: 2px solid #000;
 }
