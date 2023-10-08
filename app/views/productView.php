@@ -2,20 +2,28 @@
 <?php
 
 class productView{
+
+    public function viewHome(){
+        require 'templates/header.phtml';
+        require 'templates/home.phtml';
+        require 'templates/footer.phtml';
+    }
     
     public function viewCategoryes($categoryes){
+        require 'templates/header.phtml';
         require 'templates/viewCategoryes.phtml';
     }
 
-    public function showProducts($products){
+    public function viewAllProducts($products){
         require 'templates/viewAllProducts.phtml';
+        require 'templates/footer.phtml';
     }
 
-    public function showProductsCategory($products){
+    public function viewProductsByCategory($products){
         require 'templates/showProductsCategory.phtml';
-
+        require 'templates/footer.phtml';
     }
-    public function showError($error){
+    public function showError(){
         require 'templates/showError.phtml';
     }
     

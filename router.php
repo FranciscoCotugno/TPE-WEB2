@@ -23,7 +23,7 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new controllerProduct();
         $controller->showCategoryes();
         if($params[1] == 0){
-            $controller->showProducts();
+            $controller->showAllProducts();
         }
         else if ($params[1] >= 1 && $params[1] <= 6){
            $controller->showProductsByCategory($params[1]); 

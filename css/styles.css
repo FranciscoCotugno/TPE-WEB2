@@ -6,9 +6,8 @@
     padding: 0;
 }
 
-body {
-    background-color: #f9f9f9;
-    min-height: 100%;
+html, body {
+    height: 100%;
 }
 
 /*---------- HEADER ----------*/
@@ -82,7 +81,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
     width: 100%;
     height: 100px;
 }
@@ -218,57 +217,6 @@ footer ul {
     font-weight: 500;
 }
 
-@media only screen and (min-width: 768px) {
-
-    /*---------- HEADER ----------*/
-    header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .btn-nav {
-        display: none;
-    }
-
-    .nav-links {
-        display: inline;
-    }
-
-    .nav-links ul {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .nav-link {
-        margin:10px;
-        text-align: center;
-        border-bottom: 0;
-        width: auto;
-    }
-
-    .nav-link a {
-        text-transform: uppercase;
-    }
-
-    .nav-link a:hover {
-        font-weight: bolder;
-        color: #3e3939;
-        border-bottom: 4px solid #3e3939;
-    }
-
-    /* PRODUCTOS */
-    .container-cards {
-        justify-content: center;
-    }
-
-    .card {
-        margin: 10px;
-    }
-}
-
-
 /*---------- FORM INICIO SESION ----------*/
 .main-form__inicioSesion {
     display: flex;
@@ -302,7 +250,7 @@ footer ul {
     margin: 8px 0;
 }
 
-.form-inicioSesion__input--container input{
+.form-inicioSesion__input--container input {
     background-color: #fff;
     padding: 1em 0;
     font-size: 0.875rem;
@@ -322,7 +270,10 @@ footer ul {
 }
 
 /*---------- ADMINISTRAR ----------*/
-.no-mostrar {
+.main-administrar{
+    display: flex;
+}
+.noMostrar {
     display: none;
 }
 
@@ -332,13 +283,65 @@ footer ul {
     justify-content: center;
     height: 100%;
 }
+
 .errorPage-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .errorPage-container__number {
     font-size: 3em;
     padding: 1em;
     border-right: 2px solid #000;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /*---------- HEADER ----------*/
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn-nav {
+        display: none;
+    }
+
+    .nav-links {
+        display: inline;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-link {
+        margin: 10px;
+        text-align: center;
+        border-bottom: 0;
+        width: auto;
+    }
+
+    .nav-link a {
+        text-transform: uppercase;
+    }
+
+    .nav-link a:hover {
+        font-weight: bolder;
+        color: #3e3939;
+        border-bottom: 4px solid #3e3939;
+    }
+
+    /* PRODUCTOS */
+    .container-cards {
+        justify-content: center;
+    }
+
+    .card {
+        margin: 10px;
+    }
 }

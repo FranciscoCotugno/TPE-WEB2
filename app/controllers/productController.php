@@ -12,23 +12,19 @@ class controllerProduct{
     }
 
     public function homeController (){
-        require ('templates/header.phtml');
-        require ('templates/footer.phtml');
+        $this->view->viewHome();
     }
     public function showCategoryes(){
         $categoryes= $this->model->getCategorys();
         $this->view->viewCategoryes($categoryes);
-        
     }
-    public function showProducts(){
+    public function showAllProducts(){
         $products = $this->model->getProducts();
-        $this->view->showProducts($products);
+        $this->view->viewAllProducts($products);
     }
     public function showProductsByCategory($id){
-        
         $products = $this->model->getProductsByCategory($id);
-        
-        $this->view->showProductsCategory($products);
+        $this->view->viewProductsByCategory($products);
     }
     public function show(){
         $categoryes= $this->model->nameCategory();
@@ -37,7 +33,7 @@ class controllerProduct{
     }
     
     public function showError(){
-        $this->view->showError("Error 404");
+        $this->view->showError();
     }
     
 }

@@ -2,16 +2,21 @@
 
 const estadoForm = document.querySelector("#estado-form");
 const selectIds = document.querySelector("#select-ids");
-const checkEditar = document.querySelector("#check-editar");
+const btn = document.querySelector("#btn-form-administrar");
+let var1 = 0;
 
-checkEditar.addEventListener('change', () => {
-    let checked = checkEditar.checked;
-    if (checked == true) {
+btn.addEventListener('click', cambiarForm);
+
+function cambiarForm(){
+    if (var1 == 0) {
         estadoForm.innerHTML = 'Editar Productos';
-        selectIds.className = " ";
+        btn.value = "Agregar"
+        selectIds.className
+        var1++;
     }
-    else {
+    else if (var1 == 1){
         estadoForm.innerHTML = 'Agregar Productos';
-        selectIds.className = "no-mostrar";
+        btn.value = "Editar"
+        var1--;
     }
-});
+}
