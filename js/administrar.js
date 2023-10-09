@@ -17,7 +17,7 @@ function cambiarForm(){
         var1++;
     }
     else if (var1 == 1){
-        formAdmin.setAttribute('action', 'editarProducto')
+        formAdmin.setAttribute('action', 'agregarProducto')
         estadoForm.innerHTML = 'Agregar Productos';
         btn.value = "Editar"
         var1--;

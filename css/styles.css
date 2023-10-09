@@ -289,7 +289,7 @@ footer ul {
 }
 
 /*---------- ADMINISTRAR ----------*/
-.form-adminisrtar__container {
+.main-administrar {
     display: flex;
     flex-direction: column;
     align-items: center;
