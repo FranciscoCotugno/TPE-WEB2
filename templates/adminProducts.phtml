@@ -69,7 +69,18 @@
                         <td><?= $product->Product_name ?></td>
                         <td><?= $product->Milliliters ?>ml</td>
                         <td>$<?= $product->Price ?></td>
-                        <td class="categorys" categoria="<?= $product->Category_id ?>"></td>
+                        <td>
+                            <?php 
+                            $i = 0;
+                            $var = false;
+                            while($var == false && $i < count($categorys)){
+                                if($product->Category_id == $categorys[$i]->Category_id){
+                                    $var = true;
+                                    echo $categorys[$i]->Category_name;
+                                }
+                                $i++;
+                            }?>
+                        </td>
                         <td><a href="eliminar-<?= $product->Product_id ?>" type="button">Borrar</a></td>
                     </tr>
                 <?php endforeach ?>
