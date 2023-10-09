@@ -44,7 +44,6 @@ class adminController{
         $categorys = $this->model->getCategory();
         $this->view->viewAdministrar($products, $categorys);
     }
-
     public function updateProduct(){
         $productName= $_POST['Product_name'];
         $milliliters= $_POST['Milliliters'];
