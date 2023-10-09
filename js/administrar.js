@@ -1,26 +1,51 @@
 "use strict"
 
-const estadoForm = document.querySelector("#form-title");
-const selectIds = document.querySelector("#select-ids");
-const formAdmin = document.querySelector("#form-administrar");
-const btn = document.querySelector("#btn-form-administrar");
+//Form Productos
+const titleFormProductos = document.querySelector("#form-title-productos");
+const selectIdsProductos = document.querySelector("#select-ids-productos");
+const formProductos = document.querySelector("#form-productos");
+const btnProductos = document.querySelector("#btn-form-productos");
 let var1 = 0;
+//Form Categorias
+const titleFormCategorias = document.querySelector("#form-title-categorias");
+const selectIdsCategorias = document.querySelector("#select-ids-categorias");
+const formCategorias = document.querySelector("#form-categorias");
+const btnCategorias = document.querySelector("#btn-form-categorias");
+let var2 = 0;
 
-btn.addEventListener('click', cambiarForm);
+btnProductos.addEventListener('click', cambiarFormProducto);
+btnCategorias.addEventListener('click', cambiarFormCategorias);
 
-function cambiarForm(){
+function cambiarFormProducto() {
     if (var1 == 0) {
-        formAdmin.setAttribute('action', 'editarProducto')
-        estadoForm.innerHTML = 'Editar Productos';
-        btn.value = "Agregar"
-        selectIds.className = "form-select__conteiner select-width";
+        formProductos.setAttribute('action', 'editarProducto')
+        titleFormProductos.innerHTML = 'Editar Productos';
+        btnProductos.value = "Agregar"
+        selectIdsProductos.className = "form-select__conteiner select-width";
         var1++;
     }
-    else if (var1 == 1){
-        formAdmin.setAttribute('action', 'agregarProducto')
-        estadoForm.innerHTML = 'Agregar Productos';
-        btn.value = "Editar"
+    else if (var1 == 1) {
+        formProductos.setAttribute('action', 'agregarProducto')
+        titleFormProductos.innerHTML = 'Agregar Productos';
+        btnProductos.value = "Editar"
+        selectIdsProductos.className = "noMostrar";
         var1--;
-        selectIds.className = "noMostrar";
+    }
+}
+
+function cambiarFormCategorias() {
+    if (var2 == 0) {
+        formCategorias.setAttribute('action', 'editarCategorias')
+        titleFormCategorias.innerHTML = 'Editar Categorias';
+        btnCategorias.value = "Agregar"
+        selectIdsCategorias.className = "form-select__conteiner select-width";
+        var2++;
+    }
+    else if (var2 == 1) {
+        formCategorias.setAttribute('action', 'agregarCategorias')
+        titleFormCategorias.innerHTML = 'Agregar Categorias';
+        btnCategorias.value = "Editar"
+        selectIdsCategorias.className = "noMostrar";
+        var2--;
     }
 }
