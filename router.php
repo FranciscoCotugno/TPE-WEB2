@@ -62,8 +62,12 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         break;
     case 'agregarProducto':
         $controller = new adminController();
-        $controller->updateProduct($params[1]);
+        $controller->addProduct();
         break;
+    case 'editarProducto':
+        $controller = new adminController();
+        $controller->updateProduct();
+        break;    
     default:
         require 'templates/header.phtml';
         require 'templates/showError.phtml';

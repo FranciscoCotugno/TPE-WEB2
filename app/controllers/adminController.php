@@ -48,17 +48,13 @@ class adminController{
     public function updateProduct(){
         $productName= $_POST['Product_name'];
         $milliliters= $_POST['Milliliters'];
-        $price= $_POST['price'];
+        $price= $_POST['Price'];
         $categoryId= $_POST['Category_id'];
-        
+        $id=$_POST['id'];
 
-        $id= $this->model->updateProduct($productName, $milliliters, $price, $categoryId);
-        //header('location: '. BASE_URL);
-        if($id){
-            header('location: '. BASE_URL);
-             
-        }else{
-            $this->view->showError("404 Error");
-        }
+        $id= $this->model->updateProduct($productName, $milliliters, $price, $categoryId,$id);
+        
+        
+        header('location: '. 'administrar');
     }
 }

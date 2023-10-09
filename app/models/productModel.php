@@ -64,9 +64,10 @@ class productModel{
         return $this->db ->lastInsertId();
     }
 
-    function updateProduct($product_name, $Milliliters, $Price, $Category_id){
-        $query = $this->db->prepare('UPDATE products SET Product_name=?, Milliliters=?, Price=?, Category_id=? WHERE Product_id = ?');
-        $query->execute([$product_name, $Milliliters, $Price, $Category_id]);
+    function updateProduct($product_name, $Milliliters, $Price, $Category_id,$id){
+        $query = $this->db->prepare('UPDATE `products` SET `Product_name` = ?, `Milliliters` = ?, `Price` = ?, Category_id=? WHERE `products`.`Product_id` = ?;');
+        $query->execute([$product_name, $Milliliters, $Price, $Category_id,$id]);
     }
+    
 }
 
