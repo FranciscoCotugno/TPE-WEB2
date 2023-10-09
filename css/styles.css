@@ -6,7 +6,8 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -115,6 +116,12 @@ footer ul {
     margin-right: 20px;
 }
 
+/*---------- HOME ----------*/
+.main-home h1 {
+    color: red;
+}
+
+
 /*---------- PRODUCTOS -----------*/
 .list-categorys {
     background-color: #3e3939;
@@ -217,16 +224,8 @@ footer ul {
     font-weight: 500;
 }
 
-/*---------- FORM INICIO SESION ----------*/
-.main-form__inicioSesion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 30px;
-}
-
-.form-inicioSesion {
+/*---------- FORM INICIO SESION Y ADMINISTRAR ----------*/
+.form {
     background-color: #fff;
     display: block;
     padding: 1em;
@@ -236,7 +235,7 @@ footer ul {
     font-size: 1em;
 }
 
-.form-inicioSesion__title {
+.form-title {
     font-size: 1.25rem;
     line-height: 1.75rem;
     font-weight: 600;
@@ -244,13 +243,14 @@ footer ul {
     color: #000;
 }
 
-.form-inicioSesion__input--container input,
-.form-inicioSesion button {
+.form-input__container input,
+.form button {
     border: 1px solid #e5e7eb;
     margin: 8px 0;
 }
 
-.form-inicioSesion__input--container input {
+.form-input__container input,
+.form-select__conteiner select {
     background-color: #fff;
     padding: 1em 0;
     font-size: 0.875rem;
@@ -258,7 +258,13 @@ footer ul {
     border-radius: 0.5rem;
 }
 
-.form-inicioSesion__submit {
+.select-width select{
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+    width: 20%;
+}
+
+.form-submit {
     display: block;
     padding: 0.75em;
     background-color: #3e3939;
@@ -269,12 +275,24 @@ footer ul {
     text-transform: uppercase;
 }
 
-/*---------- ADMINISTRAR ----------*/
-.main-administrar{
-    display: flex;
-}
 .noMostrar {
     display: none;
+}
+
+/*---------- INICIO SESION ----------*/
+.main-form__inicioSesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 30px;
+}
+
+/*---------- ADMINISTRAR ----------*/
+.form-adminisrtar__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*--------- ERROR 404 PAGE ----------*/

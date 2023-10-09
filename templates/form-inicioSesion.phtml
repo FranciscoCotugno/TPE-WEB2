@@ -1,11 +1,11 @@
 <?php require 'templates/header.phtml';?>
 <main class="main-form__inicioSesion">
-    <form action="ingreso" method="POST" class="form-inicioSesion">
-        <p class="form-inicioSesion__title">Ingrese a su cuenta</p>
-        <div class="form-inicioSesion__input--container">
+    <form action="ingreso" method="POST" class="form">
+        <p class="form-title">Ingrese a su cuenta</p>
+        <div class="form-input__container">
             <input name="email_user"  placeholder="   Email">
         </div>
-        <div class="form-inicioSesion__input--container">
+        <div class="form-input__container">
             <input required name="password" type="password" placeholder="    Contraseña">
         </div>
         <?php if ($error) : ?>
@@ -14,7 +14,7 @@
             </div> 
         <?php endif ?>
 
-        <button type="submit" class="form-inicioSesion__submit">
+        <button type="submit" class="form-submit">
             Ingresar
         </button>
         <a href="registro">No tienes una cuenta? crea una cuenta.</a>
