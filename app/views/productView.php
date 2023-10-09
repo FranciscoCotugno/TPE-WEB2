@@ -9,12 +9,12 @@ class productView{
         require 'templates/footer.phtml';
     }
     
-    public function viewCategoryes($categoryes){
+    public function viewCategorys($categorys){
         require 'templates/header.phtml';
-        require 'templates/viewCategoryes.phtml';
+        require 'templates/viewCategorys.phtml';
     }
 
-    public function viewAllProducts($products){
+    public function viewAllProducts($products, $categorys){
         require 'templates/viewAllProducts.phtml';
         require 'templates/footer.phtml';
     }
@@ -27,7 +27,7 @@ class productView{
         require 'templates/showError.phtml';
     }
     
-    public function viewAdministrar($products){
+    public function viewAdministrar($products, $categorys){
         require 'templates/header.phtml';
         require 'templates/adminProducts.phtml';
     }

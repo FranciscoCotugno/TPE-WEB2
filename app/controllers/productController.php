@@ -14,21 +14,22 @@ class controllerProduct{
     public function homeController (){
         $this->view->viewHome();
     }
-    public function showCategoryes(){
-        $categoryes= $this->model->getCategorys();
-        $this->view->viewCategoryes($categoryes);
+    public function showCategorys(){
+        $categorys = $this->model->getCategorys();
+        $this->view->viewCategorys($categorys);
     }
     public function showAllProducts(){
         $products = $this->model->getProducts();
-        $this->view->viewAllProducts($products);
+        $categorys = $this->model->getCategorys();
+        $this->view->viewAllProducts($products, $categorys);
     }
     public function showProductsByCategory($id){
         $products = $this->model->getProductsByCategory($id);
         $this->view->viewProductsByCategory($products);
     }
     public function show(){
-        $categoryes= $this->model->nameCategory();
-        $this->view->viewCategoryes($categoryes);
+        $categorys = $this->model->nameCategory();
+        $this->view->viewCategorys($categorys);
         
     }
     

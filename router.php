@@ -21,7 +21,7 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         break;
     case 'productos':
         $controller = new controllerProduct();
-        $controller->showCategoryes();
+        $controller->showCategorys();
         if($params[1] == 0){
             $controller->showAllProducts();
         }
@@ -67,8 +67,7 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     default:
         require 'templates/header.phtml';
         require 'templates/showError.phtml';
-    
-       
+        break; 
 }
 
 

@@ -1,4 +1,10 @@
 <main class="main-administrar">
+    <div class="administrar-info">
+        <div class="logo-info">
+            <i class="fa-solid fa-info fa-sm"></i>
+        </div>
+        <p>Al apretar en el boton blanco del formulario de abajo se va a cambiar la función de este, va a pasar de permitirle al usuario agregar un producto a la base de datos, a editar uno de estos llamandolo por su id de producto (después de realizar esta accion el boton blanco va a permitirle volver al formulario anterior).<br>Aclaración: consultar la tabla del final de la pagina para saber el id del producto que desea editar.</p>
+    </div>
     <form action="agregarProducto" method="POST" class="form" id="form-administrar">
         <p class="form-title" id="form-title">Agregar Producto</p>
 
@@ -29,12 +35,9 @@
         <div class="form-select__conteiner select-width">
             <label>Categoria</label>
             <select required name="Category_id" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
+                <?php foreach ($categorys as $category) : ?>
+                    <option value="<?= $category->Category_id ?>"><?= $category->Category_name ?></option>
+                <?php endforeach ?>
             </select>
         </div>
 
@@ -42,32 +45,37 @@
             <input type="button" id="btn-form-administrar" value="Editar">
         </div>
 
-        <button type="submit" class="form-submit">Guardar</button>
+        <button type="submit" class="form-submit">Enviar</button>
     </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Producto</th>
-                <th>Mililitros</th>
-                <th>Precio</th>
-                <th>Categoria</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($products as $product) : ?>
+    <div class="tabla-container">
+        <h3>Info de los Productos</h3>
+        <p>Tabla para mostrar información y eliminar productos de la base de datos</p>
+        <table>
+            <thead>
                 <tr>
-                    <td><?= $product->Product_id ?></td>
-                    <td><?= $product->Product_name ?></td>
-                    <td><?= $product->Milliliters ?>ml</td>
-                    <td>$<?= $product->Price ?></td>
-                    <td><?= $product->Category_id ?></td>
-                    <td><a href="eliminar-<?= $product->Product_id ?>" type="button">Borrar</a></td>
+                    <th>Id</th>
+                    <th>Producto</th>
+                    <th>Mililitros</th>
+                    <th>Precio</th>
+                    <th>Categoria</th>
+                    <th>Borrar</th>
                 </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($products as $product) : ?>
+                    <tr>
+                        <td><?= $product->Product_id ?></td>
+                        <td><?= $product->Product_name ?></td>
+                        <td><?= $product->Milliliters ?>ml</td>
+                        <td>$<?= $product->Price ?></td>
+                        <td class="categorys" categoria="<?= $product->Category_id ?>"></td>
+                        <td><a href="eliminar-<?= $product->Product_id ?>" type="button">Borrar</a></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
 </main>
 <script src="js/administrar.js"></script>
 <script src="js/main.js"></script>

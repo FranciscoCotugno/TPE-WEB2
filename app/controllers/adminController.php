@@ -41,7 +41,8 @@ class adminController{
     public function showAdministrar(){
         AuthHelper::verify();
         $products = $this->model->getProducts();
-        $this->view->viewAdministrar($products);
+        $categorys = $this->model->getCategory();
+        $this->view->viewAdministrar($products, $categorys);
     }
 
     public function updateProduct(){

@@ -2,6 +2,9 @@
 
     <?php foreach ($products as $product) : ?>
         <div class="card">
+            <div class="card-header">
+                <p class="card-category categorys" categoria="<?= $product->Category_id ?>"></p>
+            </div>
             <div class="card-img">
                 <img src="img/productos/<?= $product->Product_name ?>.png" alt="<?= $product->Product_name ?> <?= $product->Milliliters ?>ml">
             </div>
