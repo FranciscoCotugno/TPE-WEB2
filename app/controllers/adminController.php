@@ -12,14 +12,16 @@ class adminController{
     }
 
     public function removeProduct($id){
+        AuthHelper::verify();
         $this->model->deleteProduct($id);
-        header('location: '. BASE_URL);//redirigis al home
+        header('location: '. 'administrar');
     }
 
     public function addProduct(){
+        AuthHelper::verify();
         $Product_name= $_POST['Product_name'];
         $Milliliters= $_POST['Milliliters'];
-        $Price= $_POST['price'];
+        $Price= $_POST['Price'];
         $Category_id= $_POST['Category_id'];
 
         if(empty($Product_name)||empty($Milliliters)||empty($Price)||empty($Category_id)){
@@ -30,7 +32,7 @@ class adminController{
         $id= $this->model->insertProduct($Product_name, $Milliliters, $Price, $Category_id);
 
         if($id){
-            header('location: '. BASE_URL);
+            header('location: '. 'administrar');
              
         }else{
             $this->view->showError("404 Error");
@@ -53,6 +55,11 @@ class adminController{
 
         $id= $this->model->updateProduct($productName, $milliliters, $price, $categoryId,$id);
         
+        /*if(empty($productName)||empty($milliliters)||empty($price)||empty($categoryId)||empty($id)){
+            $this->view->showError("Complete todos los campos");
+            return;
+        }*/
+
         
         header('location: '. 'administrar');
     }

@@ -1,4 +1,5 @@
 <?php
+require ('app/models/config.php');
 
 class productModel{
     private $db;
