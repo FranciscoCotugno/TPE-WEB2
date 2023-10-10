@@ -121,14 +121,14 @@ footer ul {
     font-family: "Poppins", serif;
 }
 
-.main-home .home-info{
+.main-home .home-info {
     display: flex;
     height: 15rem;
     margin: 4rem 0;
     background-color: #F3F3F3;
 }
 
-.home-info div{
+.home-info div {
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -137,7 +137,7 @@ footer ul {
     font-size: 0.8rem;
 }
 
-.home-info img{
+.home-info img {
     object-fit: cover;
     width: 100%;
 }
@@ -394,11 +394,12 @@ tbody tr:nth-child(even) {
 .errorPage-info {
     padding: 0.6em;
 }
+
 .errorPage-info p {
     margin: 10px 0;
 }
 
-.errorPage-container__title{
+.errorPage-container__title {
     font-size: 2em;
 }
 
@@ -457,11 +458,11 @@ tbody tr:nth-child(even) {
     }
 
     /*---------- HOME ----------*/
-    .main-home .home-info{
+    .main-home .home-info {
         height: 20rem;
     }
 
-    .home-info div{
+    .home-info div {
         font-size: 1rem;
     }
 
@@ -481,10 +482,11 @@ tbody tr:nth-child(even) {
 
     /*--------- ERROR 404 PAGE ----------*/
     .errorPage-container__number {
-        padding: 1em;;
+        padding: 1em;
+        ;
     }
 
     .errorPage-info a {
-       width: 40%; 
+        width: 40%;
     }
 }
