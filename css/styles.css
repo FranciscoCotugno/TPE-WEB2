@@ -117,10 +117,30 @@ footer ul {
 }
 
 /*---------- HOME ----------*/
-.main-home h1 {
-    color: red;
+.main-home {
+    font-family: "Poppins", serif;
 }
 
+.main-home .home-info{
+    display: flex;
+    height: 15rem;
+    margin: 4rem 0;
+    background-color: #F3F3F3;
+}
+
+.home-info div{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.home-info img{
+    object-fit: cover;
+    width: 100%;
+}
 
 /*---------- PRODUCTOS -----------*/
 .list-categorys {
@@ -228,6 +248,7 @@ footer ul {
 .form {
     background-color: #fff;
     display: block;
+    margin-top: 10px;
     padding: 1em;
     width: 350px;
     border-radius: 0.5rem;
@@ -359,6 +380,9 @@ tbody tr:nth-child(even) {
     display: flex;
     justify-content: center;
     height: 100%;
+    font-family: "Poppins", serif;
+    background-color: #1b1f22;
+    color: #fff;
 }
 
 .errorPage-container {
@@ -367,10 +391,29 @@ tbody tr:nth-child(even) {
     justify-content: center;
 }
 
+.errorPage-info {
+    padding: 0.6em;
+}
+.errorPage-info p {
+    margin: 10px 0;
+}
+
+.errorPage-container__title{
+    font-size: 2em;
+}
+
+.errorPage-info a {
+    padding: 0.6em;
+    border-radius: 5px;
+    background-color: #c6a153;
+    color: #fff;
+    text-decoration: none;
+}
+
 .errorPage-container__number {
     font-size: 3em;
-    padding: 1em;
-    border-right: 2px solid #000;
+    padding: 0.7em;
+    border-right: 2px solid #c6a153;
 }
 
 @media only screen and (min-width: 768px) {
@@ -413,6 +456,15 @@ tbody tr:nth-child(even) {
         border-bottom: 4px solid #3e3939;
     }
 
+    /*---------- HOME ----------*/
+    .main-home .home-info{
+        height: 20rem;
+    }
+
+    .home-info div{
+        font-size: 1rem;
+    }
+
     /*---------- PRODUCTOS ----------*/
     .container-cards {
         justify-content: center;
@@ -425,5 +477,14 @@ tbody tr:nth-child(even) {
     /*---------- ADMINISTRAR ----------*/
     .administrar-info {
         width: 50%;
+    }
+
+    /*--------- ERROR 404 PAGE ----------*/
+    .errorPage-container__number {
+        padding: 1em;;
+    }
+
+    .errorPage-info a {
+       width: 40%; 
     }
 }
