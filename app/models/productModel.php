@@ -52,23 +52,6 @@ class productModel{
 
         return $id;
     }
-    function deleteProduct($id){
-        $query = $this->db-> prepare('DELETE FROM products WHERE Product_id=?');
-        $query-> execute([$id]);
-    }
-
-    function insertProduct($Product_name, $Milliliters, $Price,$Category_id){
-
-        $query = $this->db->prepare('INSERT INTO products (Product_name, Milliliters, Price,Category_id) VALUES(?,?,?,?)');
-        $query->execute([$Product_name, $Milliliters, $Price,$Category_id]);
-    
-        return $this->db ->lastInsertId();
-    }
-
-    function updateProduct($product_name, $Milliliters, $Price, $Category_id,$id){
-        $query = $this->db->prepare('UPDATE `products` SET `Product_name` = ?, `Milliliters` = ?, `Price` = ?, Category_id=? WHERE `products`.`Product_id` = ?;');
-        $query->execute([$product_name, $Milliliters, $Price, $Category_id,$id]);
-    }
     
 }
 

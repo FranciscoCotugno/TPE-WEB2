@@ -48,7 +48,7 @@
         <button action="administrar" type="submit" class="form-submit">Enviar</button>
     </form>
 
-    <form action="" class="form" id="form-categorias">
+    <form action="agregarCategoria" class="form" method="POST" id="form-categorias" >
         <p class="form-title" id="form-title-categorias">Agregar Categoria</p>
         
         <div class="noMostrar" id="select-ids-categorias">
@@ -106,6 +106,7 @@
                             } ?>
                         </td>
                         <td><a href="eliminar-<?= $product->Product_id ?>" type="button">Borrar</a></td>
+                        <td><a href="eliminarC-<?= $categorys[$i]->Category_id ?>" type="button">Borrar categoria</a></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>

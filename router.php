@@ -25,7 +25,7 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         if($params[1] == 0){
             $controller->showAllProducts(); 
         }
-        else if ($params[1] >= 1 && $params[1] <= 6){
+        else if ($params[1] >= 1 && $params[1] <= 6){//
            $controller->showProductsByCategory($params[1]); 
         }
         else{
@@ -67,12 +67,25 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
     case 'editarProducto':
         $controller = new adminController();
         $controller->updateProduct();
-        break;    
+        break;
+        //////////
+    case 'agregarCategoria': 
+        $controller = new adminController();
+        $controller->addCategory();
+        break;
+    case 'editarCategorias':
+        $controller = new adminController();
+        $controller->updateCategory();
+        break; 
+    case 'eliminarC':
+        $controller = new adminController();
+        $controller->removeCategory($params[1]);
+        break;       
     default:
         require 'templates/header.phtml';
         require 'templates/showError.phtml';
         break; 
-}
+    }
 
 
 // case 'productos':

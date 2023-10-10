@@ -1,5 +1,5 @@
 <?php
-require_once './app/models/productModel.php';
+require_once './app/models/adminModel.php';
 require_once './app/views/productView.php';
 require_once './app/helper/autHelper.php';
 class adminController{
@@ -7,7 +7,7 @@ class adminController{
     private $view;
 
     public function __construct(){
-        $this->model= new productModel();
+        $this->model= new adminModel();
         $this->view= new productView();
     }
 
@@ -64,4 +64,33 @@ class adminController{
         header('location: '. 'administrar');
     }
     
+    public function removeCategory($id){
+        AuthHelper::verify();
+        $this->model->deleteCategory($id);
+        header('location: '. 'administrar');
+    }
+    public function addCategory(){
+        AuthHelper::verify();
+        $category=$_POST['Category_name'];//momentaneo linkear con el form
+        if(empty($category)){
+            $this->view->showError("Complete los campos solicitados");
+            return;
+        }
+        $id=$this->model->insertCategory($category);
+
+        
+        header('location: '. 'administrar');
+    }
+    public function updateCategory(){
+        $categoryName= $_POST['Category_name'];//momentaneo linkear con el form
+        $id=$_POST['id'];//momentaneo linkear con el form
+        if(empty($categoryName)||empty($id)){
+            $this->view->showError("Complete los campos solicitados");
+            return;
+        }
+        $id= $this->model->updateCategory($categoryName, $id);
+        
+        header('location: '. 'administrar');
+    }
+     
 }
