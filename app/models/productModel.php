@@ -48,9 +48,9 @@ class productModel{
         $query = $this->db ->prepare("SELECT * FROM products WHERE Category_id =?");
         $query ->execute([$id]);
 
-        $tasks = $query->fetchAll(PDO::FETCH_OBJ);
+        $id = $query->fetchAll(PDO::FETCH_OBJ);
 
-        return $tasks;
+        return $id;
     }
     function deleteProduct($id){
         $query = $this->db-> prepare('DELETE FROM products WHERE Product_id=?');

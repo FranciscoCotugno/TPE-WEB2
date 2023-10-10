@@ -63,4 +63,5 @@ class adminController{
         
         header('location: '. 'administrar');
     }
+    
 }

@@ -36,7 +36,7 @@ class authController{
     public function ingreso(){
         $email_user= $_POST['email_user'];
         $password = $_POST['password'];
-
+        
         if(empty($email_user)||empty($password)){
             $this->view->showError("Complete los campos solicitados");
             return;
