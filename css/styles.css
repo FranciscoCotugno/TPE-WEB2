@@ -256,6 +256,11 @@ footer ul {
     font-size: 1em;
 }
 
+.form-type {
+    display: flex;
+    justify-content: space-between;
+}
+
 .form-title {
     margin-bottom: 1em;
     font-size: 1.25rem;

@@ -11,9 +11,10 @@ class adminController{
         $this->view= new productView();
     }
 
-    public function removeProduct($id){
+    public function removeProduct(){
         AuthHelper::verify();
-        $this->model->deleteProduct($id);
+        $prductId= $_POST['Product_id'];
+        $this->model->deleteProduct($prductId);
         header('location: '. 'administrar');
     }
 
@@ -64,9 +65,10 @@ class adminController{
         header('location: '. 'administrar');
     }
     
-    public function removeCategory($id){
+    public function removeCategory(){
         AuthHelper::verify();
-        $this->model->deleteCategory($id);
+        $categoryId= $_POST['Category_id'];
+        $this->model->deleteCategory($categoryId);
         header('location: '. 'administrar');
     }
     public function addCategory(){
