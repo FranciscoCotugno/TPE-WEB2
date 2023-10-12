@@ -165,6 +165,10 @@ footer ul {
     color: #fff;
 }
 
+.list-categorys li:hover{
+    background-color: #766C6C;
+}
+
 .container-cards {
     margin: 10px;
     display: flex;
@@ -240,6 +244,79 @@ footer ul {
     font-weight: 500;
 }
 
+/*---------- ADMINISTRAR ----------*/
+.main-administrar,
+.tabla-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.administrar-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+.logo-info {
+    border: 3px solid #000;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.tabla-container {
+    margin: 0 10px;
+}
+
+.tabla-container h3 {
+    margin: 1em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.tabla-container p {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+table {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #3e3939;
+    color: #fff;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px 5px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #B8B8B8;
+}
+
+/*---------- INICIO SESION ----------*/
+.main-form__inicioSesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 30px;
+}
+
 /*---------- FORM INICIO SESION Y ADMINISTRAR ----------*/
 .form {
     background-color: #fff;
@@ -308,79 +385,6 @@ footer ul {
 
 .noMostrar {
     display: none;
-}
-
-/*---------- INICIO SESION ----------*/
-.main-form__inicioSesion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 30px;
-}
-
-/*---------- ADMINISTRAR ----------*/
-.main-administrar,
-.tabla-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.administrar-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 2em;
-    margin-bottom: 1em;
-    text-align: justify;
-}
-
-.logo-info {
-    border: 3px solid #000;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5px;
-}
-
-.tabla-container {
-    margin: 0 10px;
-}
-
-.tabla-container h3 {
-    margin: 1em;
-    text-align: center;
-    font-size: 2em;
-}
-
-.tabla-container p {
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-table {
-    font-family: sans-serif;
-    font-size: 0.8em;
-    border-collapse: collapse;
-}
-
-thead {
-    background-color: #3e3939;
-    color: #fff;
-}
-
-th,
-td {
-    text-align: left;
-    padding: 10px 5px;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #B8B8B8;
 }
 
 /*--------- ERROR 404 PAGE ----------*/

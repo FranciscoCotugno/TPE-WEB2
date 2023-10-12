@@ -16,6 +16,7 @@ class productView{
     }
 
     public function showError(){
+        require 'templates/header.phtml';
         require 'templates/showError.phtml';
     }
     

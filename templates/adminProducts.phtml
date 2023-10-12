@@ -1,4 +1,5 @@
 <main class="main-administrar">
+    
     <div class="administrar-info">
         <div class="logo-info">
             <i class="fa-solid fa-info fa-sm"></i>
@@ -6,11 +7,13 @@
         <h4>Aclaración:</h4>
         <p>Los botones de arriba de los formularios cambian las funciones de los mismos. Consultar la tabla del final de la pagina para saber el id del producto o categoria que desea editar o eliminar.</p>
     </div>
+
     <div class="form-type">
-            <input class="btns-admin" type="button" value="Editar" number="1">
-            <input class="btns-admin" type="button" value="Agregar" number="2">
-            <input class="btns-admin" type="button" value="Eliminar" number="3">
+        <input class="btns-admin" type="button" value="Editar" number="1">
+        <input class="btns-admin" type="button" value="Agregar" number="2">
+        <input class="btns-admin" type="button" value="Eliminar" number="3">
     </div>
+
     <form action="agregarProducto" method="POST" class="form" id="form-productos">
         <p class="form-title" id="form-title-productos">Agregar Producto</p>
 
@@ -53,15 +56,18 @@
     </form>
 
     <div class="form-type">
-            <input class="btns-admin" type="button" value="Editar" number="4">
-            <input class="btns-admin" type="button" value="Agregar" number="5">
-            <input class="btns-admin" type="button" value="Eliminar" number="6">
+        <input class="btns-admin" type="button" value="Editar" number="4">
+        <input class="btns-admin" type="button" value="Agregar" number="5">
+        <input class="btns-admin" type="button" value="Eliminar" number="6">
     </div>
+
     <form action="agregarCategoria" class="form" method="POST" id="form-categorias">
         <p class="form-title" id="form-title-categorias">Agregar Categoria</p>
 
         <div class="noMostrar" id="select-ids-categorias">
             <label for="Category_id">Seleccione una categoria</label>
+    
+            <p>Recuerde que para eliminar la catogoria, esta no debe tener productos.</p>
             <select name="Category_id">
                 <?php foreach ($categorys as $category) : ?>
                     <option value="<?= $category->Category_id ?>"><?= $category->Category_name ?></option>

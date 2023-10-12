@@ -20,14 +20,6 @@ switch ($params[0]) {
         $controller = new controllerProduct();
         $controller->showProducts();
         break;
-    // case 'registro':
-    //     $controller = new authController();
-    //     $controller->showCrearCuenta();
-    //     break;
-    // case 'crearCuenta':
-    //     $controller = new authController();
-    //     $controller->createUser();
-    //     break;
     case 'inicioSesion':
         $controller = new authController();
         $controller->showInicioSesion();
@@ -69,7 +61,15 @@ switch ($params[0]) {
         $controller->removeCategory();
         break;
     default:
-        require 'templates/header.phtml';
-        require 'templates/showError.phtml';
+        $controller = new controllerProduct();
+        $controller->showError();
         break;
+    // case 'registro':
+    //     $controller = new authController();
+    //     $controller->showCrearCuenta();
+    //     break;
+    // case 'crearCuenta':
+    //     $controller = new authController();
+    //     $controller->createUser();
+    //     break;
 }

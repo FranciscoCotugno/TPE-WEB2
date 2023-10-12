@@ -14,6 +14,7 @@ class controllerProduct{
     public function homeController (){
         $this->view->viewHome();
     }
+    
     public function showProducts(){
         $products = $this->model->getProducts();
         $categorys = $this->model->getCategorys();

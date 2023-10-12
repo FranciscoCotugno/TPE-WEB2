@@ -12,27 +12,10 @@ class authController{
         $this->view= new authView();
     }
 
-    // public function showUsers(){
-    //     $products = $this->model->getProducts();
-    //     $this->view->showProducts($products);
-    // }
-    // public function showCrearCuenta(){
-    //     $this->view->viewCrearCuenta();
-    // }
     public function showInicioSesion(){
         $this->view->viewInicioSesion();
     }
-    public function createUser(){
-        $email_user= $_POST['email_user'];
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        
-        if(!empty($email_user)||!empty($password)){
-            $this->model->addUser($email_user, $password);
-            
-            $this->view->viewInicioSesion();
-        }
 
-    }
     public function ingreso(){
         $email_user= $_POST['email_user'];
         $password = $_POST['password'];
@@ -56,5 +39,19 @@ class authController{
         AuthHelper::logout();
         header('Location: ' . BASE_URL);    
     }
-
+    
+    // ----- Este codigo se utilizo para crear el usuario webamin -----
+    // public function showCrearCuenta(){
+    //     $this->view->viewCrearCuenta();
+    // }
+    // public function createUser(){
+    //     $email_user= $_POST['email_user'];
+    //     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        
+    //     if(!empty($email_user)||!empty($password)){
+    //         $this->model->addUser($email_user, $password);
+            
+    //         $this->view->viewInicioSesion();
+    //     }
+    // }
 }

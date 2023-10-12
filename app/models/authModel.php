@@ -14,10 +14,11 @@ class authModel{
     
         return $query->fetch(PDO::FETCH_OBJ);
     }
-    public function addUser($email_user, $password) {// palabra: ingresar 
-        $query = $this->db->prepare('INSERT INTO users (email_user, password) VALUES(?,?)');
-        $query->execute([$email_user, $password]);
-
-        return $this->db->lastInsertId();
-    }
+    
+    // ----- Este codigo se utilizo para crear el usuario webamin -----
+    // public function addUser($email_user, $password) {
+    //     $query = $this->db->prepare('INSERT INTO users (email_user, password) VALUES(?,?)');
+    //     $query->execute([$email_user, $password]);
+    //     return $this->db->lastInsertId();
+    // }
 }

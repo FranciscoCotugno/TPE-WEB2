@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2023 at 02:49 PM
+-- Generation Time: Oct 12, 2023 at 02:34 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,7 +42,10 @@ INSERT INTO `categorys` (`Category_id`, `Category_name`) VALUES
 (3, 'Gaseosa'),
 (4, 'Gin'),
 (5, 'Vodka'),
-(6, 'Fernet');
+(6, 'Fernet'),
+(8, 'Energizante'),
+(11, 'hola'),
+(12, 'frands');
 
 -- --------------------------------------------------------
 
@@ -63,45 +66,46 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`Product_id`, `Product_name`, `Milliliters`, `Price`, `Category_id`) VALUES
-(1, 'Beefeater', 1000, 1000, 4),
-(2, 'Bombay Frutos', 750, 1000, 4),
-(3, 'Bombay', 750, 1000, 4),
-(4, 'BullDog', 700, 1000, 4),
-(5, 'Burnetts', 1000, 1000, 4),
-(6, 'Gordons', 700, 1000, 4),
-(7, 'Merle', 750, 1000, 4),
-(8, 'Gin Gingko', 500, 1000, 4),
-(9, 'Coca Cola', 1500, 1000, 3),
-(10, 'Coca Cola', 2250, 1000, 3),
-(11, 'Sprite', 1500, 1000, 3),
-(12, 'Sprite', 2250, 1000, 3),
-(13, 'Schweppes', 1500, 1000, 3),
-(14, 'Absolut', 750, 1000, 5),
-(15, 'Absolut Saborizado', 750, 1000, 5),
-(16, 'Smirnoff', 700, 1000, 5),
-(17, 'Smirnoff Green Apple', 700, 1000, 5),
-(18, 'Smirnoff Watermelon', 700, 1000, 5),
-(19, 'Sky', 750, 1000, 5),
-(20, 'Black Label', 750, 1000, 1),
-(21, 'Red Label', 750, 1000, 1),
-(22, 'Jack Daniels', 750, 1000, 1),
-(23, 'Jack Honey', 750, 1000, 1),
-(24, 'J&B', 750, 1000, 1),
-(25, 'Jameson', 700, 1000, 1),
-(26, 'Buchannans', 750, 1000, 1),
-(27, 'Vat 69', 700, 1000, 1),
-(28, 'White Horse', 750, 1000, 1),
-(29, 'Budweiser', 410, 1000, 2),
-(30, 'Quilmes', 473, 1000, 2),
-(31, 'Corona', 710, 1000, 2),
-(32, 'Corona', 330, 1000, 2),
-(33, 'Andes Rubia', 473, 1000, 2),
-(34, 'Andes Roja', 473, 1000, 2),
-(35, 'Andes IPA', 473, 1000, 2),
-(36, 'Branca', 1000, 1000, 6),
-(37, 'Branca', 750, 1000, 6),
-(38, 'Branca edicion limitada', 750, 1000, 6),
-(39, '1882', 750, 1000, 6);
+(1, 'Beefeater', 1000, 12400, 4),
+(2, 'Bombay Frutos', 750, 16500, 4),
+(3, 'Bombay', 750, 16500, 4),
+(4, 'BullDog', 700, 13900, 4),
+(5, 'Burnetts', 1000, 2295, 4),
+(6, 'Gordons', 700, 3600, 4),
+(7, 'Merle', 750, 3485, 4),
+(8, 'Gin Gingko', 500, 13500, 4),
+(10, 'Coca Cola', 2250, 1350, 3),
+(11, 'Sprite', 1500, 900, 3),
+(12, 'Sprite', 2250, 1350, 3),
+(13, 'Schweppes', 1500, 900, 3),
+(14, 'Absolut', 750, 8000, 5),
+(15, 'Absolut Saborizado', 750, 8000, 5),
+(16, 'Smirnoff', 700, 3000, 5),
+(17, 'Smirnoff Green Apple', 700, 3000, 5),
+(18, 'Smirnoff Watermelon', 700, 3000, 5),
+(19, 'Sky', 750, 2550, 5),
+(20, 'Black Label', 750, 18000, 1),
+(21, 'Red Label', 750, 12000, 1),
+(22, 'Jack Daniels', 750, 25550, 1),
+(23, 'Jack Honey', 750, 23500, 1),
+(24, 'J&B', 750, 5985, 1),
+(25, 'Jameson', 700, 8700, 1),
+(26, 'Buchannans', 750, 17000, 1),
+(27, 'Vat 69', 700, 2925, 1),
+(28, 'White Horse', 750, 3555, 1),
+(29, 'Budweiser', 410, 732, 2),
+(30, 'Quilmes', 473, 604, 2),
+(31, 'Corona', 710, 1100, 2),
+(32, 'Corona', 330, 588, 2),
+(33, 'Andes Rubia', 473, 588, 2),
+(34, 'Andes Roja', 473, 588, 2),
+(35, 'Andes IPA', 473, 588, 2),
+(36, 'Branca', 1000, 5000, 6),
+(37, 'Branca', 750, 4200, 6),
+(38, 'Branca Ed. Limitada', 750, 4200, 6),
+(48, '1882', 750, 2232, 6),
+(54, 'sax', 17, 14, 6),
+(62, 'hiomer', 6, 9, 12);
 
 -- --------------------------------------------------------
 
@@ -120,7 +124,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `email_user`, `password`) VALUES
-(1, 'webadmin', 'admin');
+(6, 'webadmin', '$2y$10$Ev5YSo/mP7/8.vAW4A/n7eN0qOovkvGtnyoIzzjo30pxWHNLj2tb.');
 
 --
 -- Indexes for dumped tables
@@ -153,19 +157,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categorys`
 --
 ALTER TABLE `categorys`
-  MODIFY `Category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `Product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `Product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
