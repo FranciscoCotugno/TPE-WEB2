@@ -9,20 +9,12 @@ class productView{
         require 'templates/footer.phtml';
     }
     
-    public function viewCategorys($categorys){
+    public function viewProducts($products, $categorys){
         require 'templates/header.phtml';
-        require 'templates/viewCategorys.phtml';
-    }
-
-    public function viewAllProducts($products, $categorys){
-        require 'templates/viewAllProducts.phtml';
+        require 'templates/products.phtml';
         require 'templates/footer.phtml';
     }
 
-    public function viewProductsByCategory($products){
-        require 'templates/showProductsCategory.phtml';
-        require 'templates/footer.phtml';
-    }
     public function showError(){
         require 'templates/showError.phtml';
     }

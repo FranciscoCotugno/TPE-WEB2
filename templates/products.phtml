@@ -1,7 +1,16 @@
+<ul class="list-categorys">
+    <li class="categorias-productos" id="0">Todos</li>
+    <?php foreach ($categorys as $category) :
+        if ($category->Category_id) : ?>
+            <li class="categorias-productos" id="<?php echo $category->Category_id ?>"><?php echo $category->Category_name ?></li>
+        <?php endif ?>
+    <?php endforeach ?>
+</ul>
+
 <div class="container-cards">
 
     <?php foreach ($products as $product) : ?>
-        <div class="card">
+        <div class="card" categoryID="<?= $product->Category_id ?>">
             <div class="card-header">
                 <?php
                 $i = 0;
@@ -31,3 +40,5 @@
         </div>
     <?php endforeach ?>
 </div>
+
+<script src="js/productos.js"></script>

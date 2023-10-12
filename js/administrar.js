@@ -26,37 +26,37 @@ function cambiarForm(action) {
     switch (action) {
         case '1': {
             formProductos.setAttribute('action', 'editarProducto')
-            titleFormProductos.innerHTML = 'Editar Productos';
+            titleFormProductos.innerHTML = 'Editar Producto';
             selectIdsProductos.className = "form-select__conteiner select-width";
             contFormProductos.className = "";
         } break;
         case '2': {
             formProductos.setAttribute('action', 'agregarProducto')
-            titleFormProductos.innerHTML = 'Agregar Productos';
+            titleFormProductos.innerHTML = 'Agregar Producto';
             selectIdsProductos.className = "noMostrar";
             contFormProductos.className = "";
         } break;
         case '3': {
             formProductos.setAttribute('action', 'eliminarProducto')
-            titleFormProductos.innerHTML = 'Eliminar Productos';
+            titleFormProductos.innerHTML = 'Eliminar Producto';
             selectIdsProductos.className = "form-select__conteiner select-width";
             contFormProductos.className = "noMostrar";
         } break;
         case '4': {
             formCategorias.setAttribute('action', 'editarCategoria')
-            titleFormCategorias.innerHTML = 'Editar Categorias';
+            titleFormCategorias.innerHTML = 'Editar Categoria';
             selectIdsCategorias.className = "form-select__conteiner select-width";
             contFormCategorias.className = "";
         } break;
         case '5': {
             formCategorias.setAttribute('action', 'agregarCategoria')
-            titleFormCategorias.innerHTML = 'Agregar Categorias';
+            titleFormCategorias.innerHTML = 'Agregar Categoria';
             selectIdsCategorias.className = "noMostrar";
             contFormCategorias.className = "";
         } break;
         case '6': {
             formCategorias.setAttribute('action', 'eliminarCategoria')
-            titleFormProductos.innerHTML = 'Eliminar Categoria';
+            titleFormCategorias.innerHTML = 'Eliminar Categoria';
             selectIdsCategorias.className = "form-select__conteiner select-width";
             contFormCategorias.className = "noMostrar";
         } break;

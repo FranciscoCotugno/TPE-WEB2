@@ -3,27 +3,22 @@
         <div class="logo-info">
             <i class="fa-solid fa-info fa-sm"></i>
         </div>
-        <p>Al apretar en el boton blanco del formulario de abajo se va a cambiar la función de este, va a pasar de permitirle al usuario agregar un producto a la base de datos, a editar uno de estos llamandolo por su id de producto (después de realizar esta accion el boton blanco va a permitirle volver al formulario anterior).<br>Aclaración: consultar la tabla del final de la pagina para saber el id del producto que desea editar.</p>
+        <h4>Aclaración:</h4>
+        <p>Los botones de arriba de los formularios cambian las funciones de los mismos. Consultar la tabla del final de la pagina para saber el id del producto o categoria que desea editar o eliminar.</p>
+    </div>
+    <div class="form-type">
+            <input class="btns-admin" type="button" value="Editar" number="1">
+            <input class="btns-admin" type="button" value="Agregar" number="2">
+            <input class="btns-admin" type="button" value="Eliminar" number="3">
     </div>
     <form action="agregarProducto" method="POST" class="form" id="form-productos">
-        <div class="form-type">
-            <div class="form-input__container">
-                <input class="btns-admin" type="button" value="Editar" number="1">
-            </div>
-            <div class="form-input__container">
-                <input class="btns-admin" type="button" value="Agregar" number="2">
-            </div>
-            <div class="form-input__container">
-                <input class="btns-admin" type="button" value="Eliminar" number="3">
-            </div>
-        </div>
         <p class="form-title" id="form-title-productos">Agregar Producto</p>
 
         <div class="noMostrar" id="select-ids-productos">
-            <label for="id">Seleccione un producto</label>
+            <label for="id">Seleccione el id de un producto</label>
             <select name="id">
                 <?php foreach ($products as $product) : ?>
-                    <option  value="<?= $product->Product_id ?>"><?= $product->Product_id ?></option>
+                    <option value="<?= $product->Product_id ?>"><?= $product->Product_id ?></option>
                 <?php endforeach ?>
             </select>
         </div>
@@ -56,24 +51,17 @@
 
         <button action="administrar" type="submit" class="form-submit" id="btn-submit-productos">Enviar</button>
     </form>
-    <!-- <td><a href="eliminar-<?= $product->Product_id ?>" type="button">Borrar</a></td> -->
 
+    <div class="form-type">
+            <input class="btns-admin" type="button" value="Editar" number="4">
+            <input class="btns-admin" type="button" value="Agregar" number="5">
+            <input class="btns-admin" type="button" value="Eliminar" number="6">
+    </div>
     <form action="agregarCategoria" class="form" method="POST" id="form-categorias">
-        <div class="form-type">
-            <div class="form-input__container">
-                <input class="btns-admin" type="button" value="Editar" number="4">
-            </div>
-            <div class="form-input__container">
-                <input class="btns-admin" type="button" value="Agregar" number="5">
-            </div>
-            <div class="form-input__container">
-                <input class="btns-admin" type="button" value="Eliminar" number="6">
-            </div>
-        </div>
         <p class="form-title" id="form-title-categorias">Agregar Categoria</p>
 
         <div class="noMostrar" id="select-ids-categorias">
-            <label for="id">Seleccione una categoria</label>
+            <label for="Category_id">Seleccione una categoria</label>
             <select name="Category_id">
                 <?php foreach ($categorys as $category) : ?>
                     <option value="<?= $category->Category_id ?>"><?= $category->Category_name ?></option>
@@ -90,7 +78,6 @@
 
         <button action="administrar" type="submit" class="form-submit" id="btn-submit-categorias">Enviar</button>
     </form>
-    <!-- <td><a href="eliminarC-<?= $categorys[$i]->Category_id ?>" type="button">Borrar categoria</a></td> -->
 
     <div class="tabla-container">
         <h3>Info de los Productos</h3>

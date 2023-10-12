@@ -12,15 +12,15 @@ class authController{
         $this->view= new authView();
     }
 
-    /*public function showUsers(){
-        $products = $this->model->getProducts();
-        $this->view->showProducts($products);
-    }*/
+    // public function showUsers(){
+    //     $products = $this->model->getProducts();
+    //     $this->view->showProducts($products);
+    // }
+    // public function showCrearCuenta(){
+    //     $this->view->viewCrearCuenta();
+    // }
     public function showInicioSesion(){
         $this->view->viewInicioSesion();
-    }
-    public function showCrearCuenta(){
-        $this->view->viewCrearCuenta();
     }
     public function createUser(){
         $email_user= $_POST['email_user'];
@@ -46,7 +46,7 @@ class authController{
         if ($usuario && password_verify($password, $usuario->password)) {
             AuthHelper::login($usuario);
             
-            header('Location: ' . BASE_URL);
+            header('Location: ' . 'administrar');
         }else{
             $this->view->viewInicioSesion("Los datos son erroneos");
         }

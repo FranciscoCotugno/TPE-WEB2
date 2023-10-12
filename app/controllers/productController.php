@@ -14,23 +14,10 @@ class controllerProduct{
     public function homeController (){
         $this->view->viewHome();
     }
-    public function showCategorys(){
-        $categorys = $this->model->getCategorys();
-        $this->view->viewCategorys($categorys);
-    }
-    public function showAllProducts(){
+    public function showProducts(){
         $products = $this->model->getProducts();
         $categorys = $this->model->getCategorys();
-        $this->view->viewAllProducts($products, $categorys);
-    }
-    public function showProductsByCategory($id){
-        $products = $this->model->getProductsByCategory($id);
-        $this->view->viewProductsByCategory($products);
-    }
-    public function show(){
-        $categorys = $this->model->nameCategory();
-        $this->view->viewCategorys($categorys);
-        
+        $this->view->viewProducts($products, $categorys);
     }
     
     public function showError(){
