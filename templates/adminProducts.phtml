@@ -23,7 +23,7 @@
             <label for="id">Seleccione un producto</label>
             <select name="id">
                 <?php foreach ($products as $product) : ?>
-                    <option name="Product_id" value="<?= $product->Product_id ?>"><?= $product->Product_id ?></option>
+                    <option  value="<?= $product->Product_id ?>"><?= $product->Product_id ?></option>
                 <?php endforeach ?>
             </select>
         </div>
@@ -31,7 +31,7 @@
         <div class="" id="cont-form-productos">
             <div class="form-input__container">
                 <label>Nombre del producto</label>
-                <input required name="Product_name" type="text" class="form-control">
+                <input name="Product_name" type="text" class="form-control">
             </div>
 
             <div class="form-input__container">
@@ -74,9 +74,9 @@
 
         <div class="noMostrar" id="select-ids-categorias">
             <label for="id">Seleccione una categoria</label>
-            <select name="id">
+            <select name="Category_id">
                 <?php foreach ($categorys as $category) : ?>
-                    <option name="Category_id" value="<?= $category->Category_id ?>"><?= $category->Category_id ?></option>
+                    <option value="<?= $category->Category_id ?>"><?= $category->Category_name ?></option>
                 <?php endforeach ?>
             </select>
         </div>
@@ -84,7 +84,7 @@
         <div class="" id="cont-form-categorias">
             <div class="form-input__container">
                 <label>Nombre de la categoria</label>
-                <input required name="Category_name" type="text" class="form-control">
+                <input name="Category_name" type="text" class="form-control">
             </div>
         </div>
 

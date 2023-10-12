@@ -13,8 +13,8 @@ class adminController{
 
     public function removeProduct(){
         AuthHelper::verify();
-        $prductId= $_POST['Product_id'];
-        $this->model->deleteProduct($prductId);
+        $id=$_POST['id'];
+        $this->model->deleteProduct($id);
         header('location: '. 'administrar');
     }
 
@@ -70,6 +70,7 @@ class adminController{
         $categoryId= $_POST['Category_id'];
         $this->model->deleteCategory($categoryId);
         header('location: '. 'administrar');
+
     }
     public function addCategory(){
         AuthHelper::verify();
@@ -85,7 +86,7 @@ class adminController{
     }
     public function updateCategory(){
         $categoryName= $_POST['Category_name'];//momentaneo linkear con el form
-        $id=$_POST['id'];//momentaneo linkear con el form
+        $id=$_POST['Category_id'];//momentaneo linkear con el form
         if(empty($categoryName)||empty($id)){
             $this->view->showError("Complete los campos solicitados");
             return;

@@ -52,9 +52,9 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new authController();
         $controller->logout();
         break;      
-    case 'eliminar':
+    case 'eliminarProducto':
         $controller = new adminController();
-        $controller->removeProduct($params[1]);
+        $controller->removeProduct();
         break;
     case 'administrar':
         $controller = new adminController();
@@ -73,13 +73,13 @@ switch ($params[0]) { // en la primer posicion tengo la accion real
         $controller = new adminController();
         $controller->addCategory();
         break;
-    case 'editarCategorias':
+    case 'editarCategoria':
         $controller = new adminController();
         $controller->updateCategory();
         break; 
-    case 'eliminarC':
+    case 'eliminarCategoria':
         $controller = new adminController();
-        $controller->removeCategory($params[1]);
+        $controller->removeCategory();
         break;       
     default:
         require 'templates/header.phtml';

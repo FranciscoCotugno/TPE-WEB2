@@ -43,13 +43,13 @@ function cambiarForm(action) {
             contFormProductos.className = "noMostrar";
         } break;
         case '4': {
-            formCategorias.setAttribute('action', 'editarCategorias')
+            formCategorias.setAttribute('action', 'editarCategoria')
             titleFormCategorias.innerHTML = 'Editar Categorias';
             selectIdsCategorias.className = "form-select__conteiner select-width";
             contFormCategorias.className = "";
         } break;
         case '5': {
-            formCategorias.setAttribute('action', 'agregarCategorias')
+            formCategorias.setAttribute('action', 'agregarCategoria')
             titleFormCategorias.innerHTML = 'Agregar Categorias';
             selectIdsCategorias.className = "noMostrar";
             contFormCategorias.className = "";
