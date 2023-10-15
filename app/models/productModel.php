@@ -1,12 +1,8 @@
 <?php
-require ('app/models/config.php');
+require_once "model.php";
 
-class productModel{
-    private $db;
-    
-    public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=tpeweb2;charset=utf8', 'root', '');
-    }
+class productModel extends Model{
+   
 
     public function getCategorys(){
         $query = $this->db->prepare('SELECT * FROM categorys');

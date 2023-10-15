@@ -1,12 +1,7 @@
 <?php
-//require ('app/models/config.php');
-
-class adminModel{
-    private $db;
-    
-    public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=tpeweb2;charset=utf8', 'root', '');
-    }
+require_once "model.php";
+class adminModel extends Model{
+   
 
     public function getProducts(){
         $query = $this->db ->prepare('SELECT * FROM products');

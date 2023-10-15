@@ -1,4 +1,5 @@
 <?php
+require_once 'database/config.php';
 require_once 'app/controllers/productController.php';
 require_once 'app/controllers/authController.php';
 require_once 'app/controllers/adminController.php';

@@ -1,11 +1,6 @@
 <?php
-
-class authModel{
-    private $db;
-    
-    public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=tpeweb2;charset=utf8', 'root', '');
-    }
+require_once "model.php";
+class authModel extends Model{
 
     //LOGIN USUARIO
     public function getEmail($email_user){
