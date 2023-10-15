@@ -12,6 +12,7 @@ const selectIdsCategorias = document.querySelector("#select-ids-categorias");
 const formCategorias = document.querySelector("#form-categorias");
 const contFormCategorias = document.querySelector("#cont-form-categorias");
 const btnSubmitCategorias = document.querySelector("#btn-submit-categorias");
+const pEliminar = document.querySelector("#p-eliminar-producto");
 
 let arrBtnsForm = document.querySelectorAll(".btns-admin");
 
@@ -47,18 +48,21 @@ function cambiarForm(action) {
             titleFormCategorias.innerHTML = 'Editar Categoria';
             selectIdsCategorias.className = "form-select__conteiner select-width";
             contFormCategorias.className = "";
+            pEliminar.className = "noMostrar"
         } break;
         case '5': {
             formCategorias.setAttribute('action', 'agregarCategoria')
             titleFormCategorias.innerHTML = 'Agregar Categoria';
             selectIdsCategorias.className = "noMostrar";
             contFormCategorias.className = "";
+            pEliminar.className = "noMostrar"
         } break;
         case '6': {
             formCategorias.setAttribute('action', 'eliminarCategoria')
             titleFormCategorias.innerHTML = 'Eliminar Categoria';
             selectIdsCategorias.className = "form-select__conteiner select-width";
             contFormCategorias.className = "noMostrar";
+            pEliminar.className = ""
         } break;
 
     }

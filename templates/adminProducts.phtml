@@ -67,7 +67,7 @@
         <div class="noMostrar" id="select-ids-categorias">
             <label for="Category_id">Seleccione una categoria</label>
     
-            <p>Recuerde que para eliminar la catogoria, esta no debe tener productos.</p>
+            <p id="p-eliminar-producto">Recuerde que para eliminar la catogoria, esta no debe tener productos.</p>
             <select name="Category_id">
                 <?php foreach ($categorys as $category) : ?>
                     <option value="<?= $category->Category_id ?>"><?= $category->Category_name ?></option>
