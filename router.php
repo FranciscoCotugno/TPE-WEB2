@@ -65,12 +65,12 @@ switch ($params[0]) {
         $controller = new controllerProduct();
         $controller->showError();
         break;
-    // case 'registro':
-    //     $controller = new authController();
-    //     $controller->showCrearCuenta();
-    //     break;
-    // case 'crearCuenta':
-    //     $controller = new authController();
-    //     $controller->createUser();
-    //     break;
+        // case 'registro':
+        //     $controller = new authController();
+        //     $controller->showCrearCuenta();
+        //     break;
+        // case 'crearCuenta':
+        //     $controller = new authController();
+        //     $controller->createUser();
+        //     break;
 }

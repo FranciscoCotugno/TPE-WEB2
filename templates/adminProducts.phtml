@@ -1,5 +1,5 @@
 <main class="main-administrar">
-    
+
     <div class="administrar-info">
         <div class="logo-info">
             <i class="fa-solid fa-info fa-sm"></i>
@@ -34,12 +34,12 @@
 
             <div class="form-input__container">
                 <label>Mililitros</label>
-                <input type="number" name="Milliliters" class="form-control"></input>
+                <input type="number" name="Milliliters" class="form-control" min="1" max="3000"></input>
             </div>
 
             <div class="form-input__container">
                 <label>Precio</label>
-                <input type="number" name="Price" class="form-control"></input>
+                <input type="number" name="Price" class="form-control" min="1"></input>
             </div>
 
             <div class="form-select__conteiner select-width">
@@ -66,7 +66,7 @@
 
         <div class="noMostrar" id="select-ids-categorias">
             <label for="Category_id">Seleccione una categoria</label>
-    
+
             <p id="p-eliminar-producto">Recuerde que para eliminar la catogoria, esta no debe tener productos.</p>
             <select name="Category_id">
                 <?php foreach ($categorys as $category) : ?>

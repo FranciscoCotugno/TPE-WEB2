@@ -2,14 +2,16 @@
 
 class authView
 {
-    public function viewInicioSesion($error = null){
+    public function viewInicioSesion($error = null)
+    {
         require 'templates/form-inicioSesion.phtml';
     }
 
-    public function showError($error){
+    public function showError($error)
+    {
         require 'templates/showError.phtml';
     }
-    
+
     // public function viewCrearCuenta(){
     //     require 'templates/crearCuenta.phtml';
     // }

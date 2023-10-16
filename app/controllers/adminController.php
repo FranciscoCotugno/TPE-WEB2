@@ -2,16 +2,19 @@
 require_once './app/models/adminModel.php';
 require_once './app/views/productView.php';
 require_once './app/helper/autHelper.php';
-class adminController{
+class adminController
+{
     private $model;
     private $view;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->model = new adminModel();
         $this->view = new productView();
     }
 
-    public function removeProduct(){
+    public function removeProduct()
+    {
         AuthHelper::verify();
         $id = $_POST['id'];
         if (empty($id)) {
@@ -22,7 +25,8 @@ class adminController{
         header('location: ' . 'administrar');
     }
 
-    public function removeCategory(){
+    public function removeCategory()
+    {
         AuthHelper::verify();
         $categoryId = $_POST['Category_id'];
         if (empty($categoryId)) {
@@ -33,7 +37,8 @@ class adminController{
         header('location: ' . 'administrar');
     }
 
-    public function addProduct(){
+    public function addProduct()
+    {
         AuthHelper::verify();
         $Product_name = $_POST['Product_name'];
         $Milliliters = $_POST['Milliliters'];
@@ -43,37 +48,47 @@ class adminController{
             $this->view->showError("Complete los campos solicitados");
             return;
         }
-        $id = $this->model->insertProduct($Product_name, $Milliliters, $Price, $Category_id);
-        if ($id) {
+        if ($Milliliters >= 1 && $Price >= 0) {
+            $id = $this->model->insertProduct($Product_name, $Milliliters, $Price, $Category_id);
             header('location: ' . 'administrar');
         } else {
-            $this->view->showError("404 Error");
+            $this->view->showError();
+            return;
         }
     }
 
-    public function showAdministrar(){
+    public function showAdministrar()
+    {
         AuthHelper::verify();
         $products = $this->model->getProducts();
         $categorys = $this->model->getCategory();
         $this->view->viewAdministrar($products, $categorys);
     }
 
-    public function updateProduct(){
+    public function updateProduct()
+    {
         AuthHelper::verify();
         $productName = $_POST['Product_name'];
         $milliliters = $_POST['Milliliters'];
         $price = $_POST['Price'];
         $categoryId = $_POST['Category_id'];
         $id = $_POST['id'];
-        if (empty($ProductName) || empty($milliliters) || empty($price) || empty($categoryId)||empty($id)) {
-            $this->view->showError("Complete todos los campos");
+
+        if (empty($productName) || empty($milliliters) || empty($price) || empty($categoryId) || empty($id)) {
+            $this->view->showError();
             return;
         }
-        $id = $this->model->updateProduct($productName, $milliliters, $price, $categoryId, $id);
-        header('location: ' . 'administrar');
+        if ($milliliters >= 1 && $price >= 0) {
+            $id = $this->model->updateProduct($productName, $milliliters, $price, $categoryId, $id);
+            header('location: ' . 'administrar');
+        } else {
+            $this->view->showError();
+            return;
+        }
     }
 
-    public function addCategory(){
+    public function addCategory()
+    {
         AuthHelper::verify();
         $category = $_POST['Category_name'];
         if (empty($category)) {
@@ -83,8 +98,9 @@ class adminController{
         $this->model->insertCategory($category);
         header('location: ' . 'administrar');
     }
-    
-    public function updateCategory(){
+
+    public function updateCategory()
+    {
         AuthHelper::verify();
         $categoryName = $_POST['Category_name'];
         $id = $_POST['Category_id'];
