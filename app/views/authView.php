@@ -7,7 +7,7 @@ class authView
         require 'templates/form-inicioSesion.phtml';
     }
 
-    public function showError($error)
+    public function showError()
     {
         require 'templates/showError.phtml';
     }

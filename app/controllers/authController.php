@@ -25,7 +25,7 @@ class authController
         $password = $_POST['password'];
 
         if (empty($email_user) || empty($password)) {
-            $this->view->showError("Complete los campos solicitados");
+            $this->view->viewInicioSesion("complete los campos");
             return;
         }
         $usuario = $this->model->getEmail($email_user);

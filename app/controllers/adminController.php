@@ -21,8 +21,14 @@ class adminController
             $this->view->showError("Elija un id");
             return;
         }
-        $this->model->deleteProduct($id);
-        header('location: ' . 'administrar');
+        try {
+            
+            $this->model->deleteProduct($id);
+            header('location: ' . 'administrar');
+            
+        } catch (PDOException $e) {
+            $this->view->showError();
+        }
     }
 
     public function removeCategory()
@@ -30,12 +36,19 @@ class adminController
         AuthHelper::verify();
         $categoryId = $_POST['Category_id'];
         if (empty($categoryId)) {
-            $this->view->showError("Complete los campos solicitados");
+            $this->view->showError();
             return;
         }
-        $this->model->deleteCategory($categoryId);
-        header('location: ' . 'administrar');
+        try {
+            
+            $this->model->deleteCategory($categoryId);
+            header('location: ' . 'administrar');
+            
+        } catch (PDOException $e) {
+            $this->view->showError();
+        }
     }
+    
 
     public function addProduct()
     {
@@ -45,7 +58,7 @@ class adminController
         $Price = $_POST['Price'];
         $Category_id = $_POST['Category_id'];
         if (empty($Product_name) || empty($Milliliters) || empty($Price) || empty($Category_id)) {
-            $this->view->showError("Complete los campos solicitados");
+            $this->view->showError();
             return;
         }
         if ($Milliliters >= 1 && $Price >= 0) {
@@ -92,7 +105,7 @@ class adminController
         AuthHelper::verify();
         $category = $_POST['Category_name'];
         if (empty($category)) {
-            $this->view->showError("Complete los campos solicitados");
+            $this->view->showError();
             return;
         }
         $this->model->insertCategory($category);
@@ -105,7 +118,7 @@ class adminController
         $categoryName = $_POST['Category_name'];
         $id = $_POST['Category_id'];
         if (empty($categoryName) || empty($id)) {
-            $this->view->showError("Complete los campos solicitados");
+            $this->view->showError();
             return;
         }
         $id = $this->model->updateCategory($categoryName, $id);

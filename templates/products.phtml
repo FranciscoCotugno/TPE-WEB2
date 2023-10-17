@@ -2,7 +2,7 @@
     <li class="categorias-productos" id="0">Todos</li>
     <?php foreach ($categorys as $category) :
         if ($category->Category_id) : ?>
-            <li class="categorias-productos" id="<?php echo $category->Category_id ?>"><?php echo $category->Category_name ?></li>
+            <li class="categorias-productos" id="<?php $category->Category_id ?>"><?php echo $category->Category_name ?></li>
         <?php endif ?>
     <?php endforeach ?>
 </ul>
