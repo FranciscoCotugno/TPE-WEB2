@@ -42,10 +42,7 @@ INSERT INTO `categorys` (`Category_id`, `Category_name`) VALUES
 (3, 'Gaseosa'),
 (4, 'Gin'),
 (5, 'Vodka'),
-(6, 'Fernet'),
-(8, 'Energizante'),
-(11, 'hola'),
-(12, 'frands');
+(6, 'Fernet');
 
 -- --------------------------------------------------------
 
@@ -103,9 +100,7 @@ INSERT INTO `products` (`Product_id`, `Product_name`, `Milliliters`, `Price`, `C
 (36, 'Branca', 1000, 5000, 6),
 (37, 'Branca', 750, 4200, 6),
 (38, 'Branca Ed. Limitada', 750, 4200, 6),
-(48, '1882', 750, 2232, 6),
-(54, 'sax', 17, 14, 6),
-(62, 'hiomer', 6, 9, 12);
+(48, '1882', 750, 2232, 6);
 
 -- --------------------------------------------------------
 
