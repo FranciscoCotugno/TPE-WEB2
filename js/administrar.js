@@ -64,6 +64,5 @@ function cambiarForm(action) {
             contFormCategorias.className = "noMostrar";
             pEliminar.className = ""
         } break;
-
     }
 }
